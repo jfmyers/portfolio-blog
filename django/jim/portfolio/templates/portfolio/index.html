@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<script type="text/javascript"> 
+	var page = 'projects';
+	mixpanel.track(page);
+</script>
+<div class="content-container">
+{% if latest_project_list %}
+    {% for project in latest_project_list %}
+        <div class="project">
+			<div class="col1">
+				<p>>_</p>
+			</div>
+			<div class="col2">
+				<p class="title"><a href="{{ project.link }}" target="_blank">{{project.title}}</a></p>
+				<p class="text">
+					{% autoescape off %} {{project.descr | linebreaksbr}} {% endautoescape %}
+				</p>
+				{% if project.news %}
+				<p class="text">
+					<i>Recent Developments:</i>{% autoescape off %} {{project.news | linebreaksbr}} {% endautoescape %}
+				{% endif %}
+				</p>
+			</div>
+		</div>
+    {% endfor %}
+{% else %}
+    <div>No projects are available.</div>			 
+{% endif %}
+</div>
+{% endblock %}

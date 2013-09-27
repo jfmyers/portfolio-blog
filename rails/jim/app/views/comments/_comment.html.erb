@@ -1,0 +1,12 @@
+<% if comment.commenter %>
+<li>
+	<div class="item-col-1">
+		<p class="titleS"><-</p>
+	</div>
+	<div class="item-col-2">
+		<p class="titleS"><%= comment.commenter %></p>
+		<p class="dateCreatedS"><%= comment.created_at.strftime('%B %d, %Y at %I:%M %p') %></p>
+		<p class="textS"><%= comment.body %></p>
+	</div>
+</li>
+<% end %>

@@ -1,0 +1,6 @@
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+		<%= f.text_field( :email, placeholder: "Email (This will never be shared with anyone.)") %><br>
+		<%= f.text_field( :commenter, placeholder: "Full Name") %><br>
+		<%= f.text_area( :body, placeholder: "Your Thoughts") %><br>
+		<%= f.submit(class: "orange-button-flat", value:"Submit Your Thoughts") %>
+<% end %>

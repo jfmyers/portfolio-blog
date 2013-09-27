@@ -1,0 +1,55 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<script type="text/javascript"> 
+	var page = 'research';
+	mixpanel.track(page);
+</script>
+<div class="content-container">
+	<p class="headText">My current research involves the market for Financial Transmission Rights(FTR), a sort of power derivative. Before exploring my work below, 	allow me to explain what an FTR is and its importance.</p>
+	<p class="headText highlight">
+		<em><strong>An overly simplified example:</strong></em> It’s a scorching hot day and along with your neighbors you crank up the AC. Since more power is being 			taken from the grid, more must be delivered to your town, but these lines can physically only transport so much. Something called congestion ensues and as more people crank up their ACs the price of congestion rises. For power suppliers it becomes costly to supply your town with energy. If the price of congestion at Generator A is $10 and the price of congestion at your town is $50, the energy supplier must pay $40 in congestion charges for every mega-watt(MW) of energy delivered to your town, every hour. Multiply this by thousands of MW's and many hours and the losses can be catastrophic. That’s where financial transmission rights come into play. These instruments allow energy suppliers to hedge congestion charges.
+</br></br><em><strong>Why is this so important?</strong></em> In the next few decades the quantity of power on the grid is going to increase like never before. For those that don't properly anticpate risk it will mean the end of business and for a system as a whole it could mean dramtically unstable retail prices (think California during the Enron era).The difficulty in determining how to use a Financial Transmission Right is that their paths are location specific. A Financial Transmission Right defined between your town and generator A, will not behave in the same manner as one between generator A and town X. To that end we need a framework that provides a deep understanding of the behavior of different types of FTRs. This requires modeling the risk associated with millions of FTR positions as well as accommodating the seemingly bizarre properties of FTRs themselves. 
+</br></br>
+My collaborators and I have developed the first of such a framwork. Our most recent paper <em>"Risk and Abnormal Returns in Markets for Financial Transmission Rights"</em> is under peer review.
+	</p>
+{% if latest_paper_list %}
+	{% for paper in latest_paper_list %}
+	<div class="paper">
+		<div class="col1">
+			<p>>_</p>
+		</div>
+		<div class="col2">
+			<p class="title">
+				{% if paper.link %}
+					<a href="{{ paper.link }}" target="_blank">{{ paper.title }}</a>
+				{% else %}
+					{{ paper.title }}
+				{% endif %}
+			</p>
+			<p class="text">
+				{% autoescape off %} {{ paper.descr | linebreaksbr }} {% endautoescape %}
+			</p>
+			{% if paper.news %}
+				<p class="text">
+					<i>Author(s):</i>{% autoescape off %} {{ paper.authors | linebreaksbr }} {% endautoescape %}
+				</p>
+			{% endif %}
+			{% if paper.news %}
+				<p class="text">
+					<i>Developments:</i>{% autoescape off %} {{ paper.news | linebreaksbr }} {% endautoescape %}
+				</p>
+			{% endif %}
+			{% if paper.awards %}
+				<p class="text">
+					<i>Awards:</i>{% autoescape off %} {{ paper.awards | linebreaksbr }} {% endautoescape %}
+				</p>
+			{% endif %}
+		</div>
+	</div>
+{% endfor %}
+{% else %}
+    <div>No papers are available.</div>			 
+{% endif %}
+</div>
+{% endblock %}

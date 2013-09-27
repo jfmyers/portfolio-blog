@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  about: MyText
+  city: MyString
+  company: MyString
+  company_site: MyString
+  company_site: MyString
+  email: MyString
+  fname: MyString
+  github: MyString
+  languages: MyText
+  linkedin: MyString
+  lname: MyString
+  major: MyString
+  minor: MyString
+  site1_name: MyString
+  site1_url: MyString
+  site2_name: MyString
+  site2_url: MyString
+  site3_name: MyString
+  site3_url: MyString
+  skills: MyText
+  state: MyString
+  technologies: MyText
+  title: MyString
+  twitter: MyString
+
+two:
+  about: MyText
+  city: MyString
+  company: MyString
+  company_site: MyString
+  company_site: MyString
+  email: MyString
+  fname: MyString
+  github: MyString
+  languages: MyText
+  linkedin: MyString
+  lname: MyString
+  major: MyString
+  minor: MyString
+  site1_name: MyString
+  site1_url: MyString
+  site2_name: MyString
+  site2_url: MyString
+  site3_name: MyString
+  site3_url: MyString
+  skills: MyText
+  state: MyString
+  technologies: MyText
+  title: MyString
+  twitter: MyString

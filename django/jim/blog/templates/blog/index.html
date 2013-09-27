@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<script type="text/javascript"> 
+	var page = 'blog';
+	mixpanel.track(page);
+	$(document).ready(function(){
+		$(".postText").dotdotdot({height:100});
+	})
+</script>
+<div class="content-container">
+{% if latest_post_list %}
+    {% for post in latest_post_list %}
+        <div class="post">
+			<div class="col1">
+				<p>>_</p>
+			</div>
+			<div class="col2">
+				<p class="title"><a href="../../../post/{{post.id}}">{{post.title}}</a></p>
+				<p class="dateCreated">
+					{{post.pub_date}}
+				</p>
+				<p class="text postText">
+					{% autoescape off %} {{post.post | linebreaksbr}} {% endautoescape %}
+				</p>
+			</div>
+		</div>
+    {% endfor %}
+{% else %}
+    <div>No posts are available.</div>			 
+{% endif %}
+</div>
+{% endblock %}

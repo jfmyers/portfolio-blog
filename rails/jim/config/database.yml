@@ -1,0 +1,21 @@
+development:
+  adapter: mysql2
+  host: #HOST
+  database: #DATABASENAME_development
+  username: #USERNAME
+  password: #PASSWORD
+
+test:
+  adapter: mysql2
+  host: #HOST
+  database: #DATABASENAME_test
+  username: #USERNAME
+  password: #PASSWORD
+  
+production:
+  adapter: mysql2
+  host: #HOST
+  database: #DATABASENAME_production
+  username: #USERNAME
+  password: #PASSWORD
+  

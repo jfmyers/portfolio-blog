@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JFM</title>
+  <%= csrf_meta_tags %>
+  
+  <link rel="shortcut icon" href="https://d3fuw6vo22gqor.cloudfront.net/images/jfm.ico">
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/buttons.css" />
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/base.v.1.9.css" />
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/sh/shCore.css" />
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/sh/shCoreDjango.css" />
+  <link rel="stylesheet" type="text/css" href="https://d3fuw6vo22gqor.cloudfront.net/css/sh/shThemeDefault.css" />
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/jquery.js" ></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/underscore.js" ></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/bootstrap.js" ></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/autoellipsis.js" ></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/sh/shCore.js"></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/sh/shBrushPython.js"></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/sh/shBrushPhp.js"></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/sh/shBrushJScript.js"></script>
+  <script type="text/javascript" src="https://d3fuw6vo22gqor.cloudfront.net/js/sh/shBrushSql.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+  typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+  b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+  mixpanel.init("02fbd73fdbb2458629cb734014acabfa");</script><!-- end Mixpanel -->
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		SyntaxHighlighter.all()
+  	})
+  </script>
+</head>
+<body>
+	<div class="side-nav">
+		<div>
+			<h1>J.Myers</h1>
+			<ul>
+				<li>
+					<%= link_to 'ABOUT', '/about' %>
+				</li>
+				<li>
+					<%= link_to "BLOG", '/' %>
+				</li>
+				<li>
+					<%= link_to "CODE", "https://github.com/jfmyers", target:"_blank" %>
+				</li>
+				<li>
+					<%= link_to "PROJECTS", '/projects' %>
+				</li>
+				<li>
+					<%= link_to "RESEARCH", '/research' %>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="app-scroll">
+		<div class="app-content">
+        	<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

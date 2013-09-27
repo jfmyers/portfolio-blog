@@ -1,0 +1,31 @@
+<script type="text/javascript"> 
+	var page = 'blog';
+	mixpanel.track(page);
+	$(document).ready(function(){
+		$(".postText").dotdotdot({height:100});
+	})
+</script>
+<div class="content-container">
+<% if @posts.count > 0 %>
+    <% @posts.each do |post| %>
+        <div class="post">
+			<div class="col1">
+				<p>>_</p>
+			</div>
+			<div class="col2">
+				<p class="title">
+					<%= link_to post.title,  post_path(post) %>
+				</p>
+				<p class="dateCreated">
+					<%= post.created_at.strftime('%B %d, %Y at %I:%M %p') %>
+				</p>
+				<p class="text postText">
+					<%= post.preview.html_safe %>
+				</p>
+			</div>
+		</div>
+    <% end %>
+<% else %>
+    <div>No posts are available.</div>			 
+<% end %>
+</div>
